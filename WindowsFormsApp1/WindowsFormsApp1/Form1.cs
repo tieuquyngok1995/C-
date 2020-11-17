@@ -40,6 +40,16 @@ namespace WindowsFormsApp1
             }
         }
 
+        public static bool CompareConditional(bool left, string operators, bool right)
+        {
+            switch (operators)
+            {
+                case "AND": case "&&": return left && right;
+                case "OR" : case "||": return left || right;
+                default: throw new ArgumentException("Invalid comparison operator: {0}", operators);
+            }
+        }
+
         public void format(string str)
         {
             string[] line =  str.Split('\n');
